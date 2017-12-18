@@ -1,0 +1,36 @@
+<div class="container relleno_t-b">
+    <nav class="navbar quitar_margen_t-b">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="fl margen_r" href="/">
+                    <%= image_tag("pelota-logo-p.png", :class => "", :height => "50px") %>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <%#************  FORMULARIO DE BUSQUEDA ****************%>
+                <div class="margen_l-r bk-blanco  navbar-left recuadro_buscar" style="margin-top: 5px;">
+                    <%= form_tag( "/buscar_varios", :method => "post", :id => "form_buscar", :class=> "", :role => "search" ) do %>
+                        <%= text_field_tag 'txt_buscar', nil, :class => "txt-h-oblique tama_9", :placeholder => "Buscar aqui ...", :required => true %>
+
+                        <button type="submit" class="btn btn-default boton_buscar">
+                            <%= image_tag("lupa.png", :height => "20px") %>
+                        </button> 
+                    <% end %>
+                </div>
+
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+
+

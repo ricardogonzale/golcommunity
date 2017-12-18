@@ -1,0 +1,24 @@
+default: &default
+  adapter:      postgresql
+  encoding:     unicode
+  pool:         <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  port:         5432
+
+development:
+  <<: *default
+  database:     gol_mensaje
+  host:         localhost
+  username:     postgres
+  password:     123456
+
+test:
+  database:     gol_mensaje
+  host:         localhost
+  username:     postgres
+  password:     123456
+
+production:
+  database:     gol_mensaje
+  host:         localhost
+  username:     postgres
+  password:     123456

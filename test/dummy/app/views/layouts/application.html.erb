@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GolCommunity</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <%= csrf_meta_tags %>
+
+        <%= favicon_link_tag 'favicon.ico?v=1'%>
+
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+
+    </head>
+
+    <body class="txt_general">
+        <%= render 'layouts/valida_javascript' %>
+        <%= render 'layouts/header' %>
+
+        <!-- ------- COMIENZO DEL CUERPO --------- -->
+        <main class="bk-blanco">
+            <%= yield %>
+        </main>
+        <!-- ************ FIN DEL CUERPO ************ -->
+
+        <%= render 'layouts/footer' %>
+
+
+    </body>
+</html>

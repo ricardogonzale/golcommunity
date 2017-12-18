@@ -1,0 +1,47 @@
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <%= form_for :sesion, :url => "#" do |f| %>
+                <div class="modal-header bk-gris txt-blanco">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title txt-h-medio tama_18" id="myModalLabel">Inicio de Sesión</h4>
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-group">
+                        <%= f.label :usuario, "Nombre de Usuario (Correo Electrónico):", :class => "tama_9" %>
+                        <%= f.email_field :usuario, :required => true, :class => "trim form-control", :value => @usuario_recordado %>
+                    </div>
+                    <div class="form-group">
+                        <%= f.label :clave, "Contraseña:", :class => "tama_9"  %>
+                        <%= f.password_field :password, :required => true, :class => "form-control", :value => @clave_recordada,
+                          :placeholder => "Escriba aqui su clave actual", :pattern => ".{5,15}", 
+                          :oninvalid => "setCustomValidity('El campo debe tener entre 5 y 15 caracteres')", :oninput => "setCustomValidity('')"%>
+                    </div>
+                    <div class="">
+                        <p> 
+                            <%= link_to "¿Olvidó su contraseña?", "#",
+                              :title => 'Suministre su "Nombre de Usuario", pulse aquí, y una nueva clave será enviada a su correo.',
+                              :onclick => "valida_envia()",
+                              :class => " enlace_gris tama_10" %>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row modal-footer">
+                    <div class="col-xs-6 text-left">
+                        <button type="button" class="btn boton-blanco-redondo" data-dismiss="modal">CANCELAR</button>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <%= button_tag(:type=> 'submit', class: "btn boton-verde") do %>
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> INGRESAR 
+                            <% end %>
+                        </div>
+
+
+                    </div>
+                <% end %>
+
+            </div>
+        </div>
+    </div>

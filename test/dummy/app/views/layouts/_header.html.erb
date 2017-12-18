@@ -1,0 +1,93 @@
+<header>
+    <nav class="bk-gris margen_sm_b navbar navbar-default navbar-fixed-top">
+            <%= render "layouts/header_publico" %>
+    </nav>
+
+    <section class="bk-blanco" style="padding-top: 80px;">
+        <div class="container relleno_t-b">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#cabecero-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand quitar_padding_t-b" href="/">
+                    <%= image_tag("logo_gol_m.png", :class => "img_logo", :alt => "Logo") %>
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="cabecero-collapse-1">
+                <div class="row">
+                    <% if session[:usuario_id].nil? %>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <span>
+                                    <button type="button" class="btn boton-ocre" data-toggle="modal" data-target="#myModal" title="Para ingresar haz clic AQUI">
+                                        INICIAR SESIÓN
+                                    </button>
+                                </span>
+                            </li>
+                        </ul>
+                    <% end %>
+
+                    <%# ************************** %>
+                    <%= render "layouts/modal_inicio_sesion" %>
+
+
+                    <%# *************  RRSS ************** %>
+                    <ul class="nav navbar-nav navbar-right relleno_l-r">
+                        <li class="margen_sm_r">
+                            <span>
+                                <%= link_to image_tag("logo-gris-face.png", :height => '20px'), "https://www.facebook.com/oficial.facegol",
+                                  :class => "boton-blanco-redondo", :title => "Facebook", :target => "_blank" %>
+                            </span>
+                        </li>
+                        <li class="margen_sm_r">
+                            <span>
+                                <%= link_to image_tag("logo-gris-twitter.png", :height => '20px'), "https://twitter.com/Facegol_Oficial",
+                                  :class => "boton-blanco-redondo", :title => "Twitter", :target => "_blank" %>
+                            </span>
+                        </li>
+                        <li class="margen_sm_r">
+                            <span>
+                                <%= link_to image_tag("logo-gris-youtube.png", :height => '20px'), "https://www.youtube.com/channel/UCwy1k2ohI6DnKBjYEkg4mqw",
+                                  :class => "boton-blanco-redondo", :title => "YouTube", :target => "_blank" %>
+                            </span>
+                        </li>
+                        <li class="margen_sm_r">
+                            <span>
+                                <%= link_to image_tag("logo-gris-instagram.png", :height => '20px'), "https://www.instagram.com/facegol.oficial",
+                                  :class => "boton-blanco-redondo", :title => "Instagram", :target => "_blank" %>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <%# *************  MENU PRINCIPAL ************** %>
+                <div class="row">
+                    <ul class="nav nav-pills navbar-right menu_gris-ocre">
+                        <li><%= link_to "INICIO", "/", :class=> "" %></li>
+                        <li class="menu-linea">&nbsp;</li>
+
+                        <li><%= link_to "TORNEOS", "/", :class=> "" %></li>
+                        <li class="menu-linea">&nbsp;</li>
+
+                        <li><%= link_to "MERCADO", "/", :class=> "" %></li>
+                        <li class="menu-linea">&nbsp;</li>
+
+                        <li><%= link_to "CURSOS", "#", :class=> "" %></li>
+                        <li class="menu-linea">&nbsp;</li>
+
+                        <li><%= link_to "CONTACTANOS", "#", :class=> "" %></li>
+                        <li class="menu-linea">&nbsp;</li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</header>
